@@ -16,9 +16,19 @@ public class ProdutoController {
 	@Autowired
 	private ProdutoRepository repository;
 	
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value = "/salvar", method = RequestMethod.POST)
 	public @ResponseBody void salvar(Produto produto){
 		repository.save(produto);
+	}
+	
+	@RequestMapping(method = RequestMethod.GET)
+	public @ResponseBody Iterable<Produto> buscarTodos(Produto produto){
+	 	return repository.findAll();
+	}
+	
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	public Produto buscarPorId(Long id){
+		return repository.findOne(id);
 	}
 	
 }
