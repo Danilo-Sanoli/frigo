@@ -1,4 +1,4 @@
-package br.com.sanoli.frigo.settings;
+package br.com.sanoli.frigo;
 
 import javax.sql.DataSource;
 
@@ -19,9 +19,8 @@ public class SpringBootSettings {
 	public DataSource createDataSource(){
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl(""); // Criar banco de dados local para testes
-		dataSource.setUsername(""); // Criar usuario para testes
-		dataSource.setPassword(""); // Criar senha para usuário
+		dataSource.setUrl("jdbc:mysql://localhost:3306/frigo_db");
+		dataSource.setUsername("root");
 		return dataSource;
 	}
 
