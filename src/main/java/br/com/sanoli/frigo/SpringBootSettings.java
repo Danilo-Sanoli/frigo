@@ -7,12 +7,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-
 @SpringBootApplication
 public class SpringBootSettings {
 	
 	public static void main(String[] args) {
+		
 		SpringApplication.run(SpringBootSettings.class, args);
+		
 	}
 	
 	@Bean
