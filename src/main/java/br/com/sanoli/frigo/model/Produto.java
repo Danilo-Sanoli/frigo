@@ -10,21 +10,17 @@ import javax.persistence.Table;
 import br.com.sanoli.frigo.enums.TipoProduto;
 
 @Entity
-@Table(name = "TB_PRODUTO")
+@Table(name="TB_PRODUTO")
 public class Produto {
 
 	@Id
-	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-
-	@Column(name = "DE_DESCRICAO")
+	@Column(name="ID_PRODUTO")
+	private long id;
+	@Column(name="DE_DESCRICAO")
 	private String descricao;
-
-	@Column(name = "DE_URL_IMAGEM")
+	@Column(name="DE_URL_IMAGEM")
 	private String urlImagem;
-
-	//Teste
 	@Column(name = "ID_TIPO")
 	private TipoProduto tipoProduto;
 
