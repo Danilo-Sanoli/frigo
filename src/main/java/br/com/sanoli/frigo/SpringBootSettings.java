@@ -1,7 +1,5 @@
 package br.com.sanoli.frigo;
 
-import java.util.Calendar;
-
 import javax.sql.DataSource;
 
 import org.slf4j.Logger;
@@ -42,6 +40,7 @@ public class SpringBootSettings {
 		return dataSource;
 	}
 	
+	/* Os testes também preenchem o banco para que possam ser feitos outros testes */
 	@Bean
 	public CommandLineRunner testePedido(PedidoRepository repository) {
 		return (args) -> {
@@ -63,11 +62,13 @@ public class SpringBootSettings {
 		return (args) -> {
 			// save a couple of customers
 			repository.save(new Produto("produto001", "urlImg", TipoProduto.CARNE));
+			repository.save(new Produto("teste", "urlImg", TipoProduto.CARNE));
+			repository.save(new Produto("teste01", "urlImg", TipoProduto.CARNE));
 
 			// fetch all customers
 			log.info("Found with findAll():");
 			log.info("-------------------------------");
-			for (Produto produto: repository.findAll()) {
+			for (Produto produto: repository.findByDescricaoContaining("teste")) {
 				log.info(produto.getDescricao());
 			}
 			log.info("");
@@ -90,5 +91,4 @@ public class SpringBootSettings {
 			log.info("");
 		};
 	}
-
 }

@@ -37,6 +37,16 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
+	
+		<!-- https://mvnrepository.com/artifact/com.google.guava/guava 
+			 Possui métodos utilitários. Usado nesse projeto para converter
+			 Listas Iterable para ArrayList -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>22.0</version>
+		</dependency>
+			
 
 	</dependencies>
 

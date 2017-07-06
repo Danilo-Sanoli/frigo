@@ -1,34 +1,47 @@
 package br.com.sanoli.frigo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import br.com.sanoli.frigo.dao.ProdutoRepository;
 import br.com.sanoli.frigo.model.Produto;
+import br.com.sanoli.frigo.service.ProdutoService;
 
-@Controller
+@RestController
 @RequestMapping("/produto")
 public class ProdutoController {
 
 	@Autowired
-	private ProdutoRepository repository;
+	private ProdutoService service;
 	
-	@RequestMapping(value = "/salvar", method = RequestMethod.POST)
-	public @ResponseBody void salvar(Produto produto){
-		repository.save(produto);
+	@PostMapping(value = "/salvar")
+	public void save(@RequestBody Produto produto){
+		service.save(produto);
 	}
 	
-	@RequestMapping(method = RequestMethod.GET)
-	public @ResponseBody Iterable<Produto> buscarTodos(Produto produto){
-	 	return repository.findAll();
+	@GetMapping
+	@ResponseBody
+	public List<Produto> findAll(Produto produto){
+	 	return service.findAll();
 	}
 	
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public Produto buscarPorId(Long id){
-		return repository.findOne(id);
+	@GetMapping(value = "/{id}")
+	@ResponseBody
+	public Produto findById(@PathVariable("id") Long id){
+		return service.findOne(id);
+	}
+	
+	@GetMapping(value = "descricao/{descricao}")
+	@ResponseBody
+	public List<Produto> findByDescricao(@PathVariable("descricao") String descricao){
+		return service.findByDescricao(descricao);
 	}
 	
 }
