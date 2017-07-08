@@ -17,6 +17,8 @@ public class Produto {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="ID_PRODUTO")
 	private long id;
+	@Column(name = "DE_NOME")
+	private String nome;
 	@Column(name="DE_DESCRICAO")
 	private String descricao;
 	@Column(name="DE_URL_IMAGEM")
@@ -28,8 +30,10 @@ public class Produto {
 		super();
 	}
 
-	public Produto(String descricao, String urlImagem, TipoProduto tipoProduto) {
+	public Produto(long id, String nome, String descricao, String urlImagem, TipoProduto tipoProduto) {
 		super();
+		this.id = id;
+		this.nome = nome;
 		this.descricao = descricao;
 		this.urlImagem = urlImagem;
 		this.tipoProduto = tipoProduto;
@@ -40,6 +44,18 @@ public class Produto {
 	}
 
 	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setId(long id) {
 		this.id = id;
 	}
 
