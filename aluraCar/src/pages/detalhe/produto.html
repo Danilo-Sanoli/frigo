@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{produto.nome}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-content>
+
+          <ion-item-group>
+            <ion-item-divider color="light">Informações</ion-item-divider>
+            <ion-item>{{produto.nome}}</ion-item>
+            <ion-item>R${{produto.valor}}</ion-item>
+          </ion-item-group>
+
+        </ion-card-content>
+     </ion-card>
+     <button ion-button block>Avançar no agendamento</button>
+</ion-content>
