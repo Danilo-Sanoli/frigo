@@ -26,6 +26,12 @@ public class PedidoServiceImpl implements PedidoService{
 	public Pedido findOne(Long id) {
 		return repository.findOne(id);
 	}
+
+	@Override
+	public void save(Pedido pedido) {
+		repository.save(pedido);
+		
+	}
 	
 	
 
