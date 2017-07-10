@@ -30,7 +30,6 @@ public class PedidoServiceImpl implements PedidoService{
 	@Override
 	public void save(Pedido pedido) {
 		repository.save(pedido);
-		
 	}
 	
 	
