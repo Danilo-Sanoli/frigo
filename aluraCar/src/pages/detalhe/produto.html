@@ -6,17 +6,28 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="card-background-page">
+
     <ion-card>
-        <ion-card-content>
 
-          <ion-item-group>
-            <ion-item-divider color="light">Informações</ion-item-divider>
-            <ion-item>{{produto.nome}}</ion-item>
-            <ion-item>R${{produto.valor}}</ion-item>
-          </ion-item-group>
+      <img src="{{produto.urlImagem}}" />
+            
+      <div class="card-title">
+          {{produto.nome}}
+      </div>
+    </ion-card>
+          
+      <ion-item>
+        <ion-icon ios="ios-list-outline" md="md-list">
+          {{produto.descricao}}
+        </ion-icon>
+      </ion-item>
 
-        </ion-card-content>
-     </ion-card>
-     <button ion-button block>Avançar no agendamento</button>
+      <ion-item>
+        <ion-icon ios="ios-cash-outline" md="md-cash">
+          {{produto.valor}}
+        </ion-icon>
+      </ion-item>
+
+     <button ion-button block>Adicionar ao Carrinho</button>
 </ion-content>

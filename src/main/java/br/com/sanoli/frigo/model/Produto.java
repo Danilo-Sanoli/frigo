@@ -10,33 +10,36 @@ import javax.persistence.Table;
 import br.com.sanoli.frigo.enums.TipoProduto;
 
 @Entity
-@Table(name="TB_PRODUTO")
+@Table(name = "TB_PRODUTO")
 public class Produto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="ID_PRODUTO")
-	private long id;
+	@Column(name = "ID_PRODUTO")
+	private Long id;
 	@Column(name = "DE_NOME")
 	private String nome;
-	@Column(name="DE_DESCRICAO")
+	@Column(name = "DE_DESCRICAO")
 	private String descricao;
-	@Column(name="DE_URL_IMAGEM")
+	@Column(name = "DE_URL_IMAGEM")
 	private String urlImagem;
 	@Column(name = "ID_TIPO")
 	private TipoProduto tipoProduto;
+	@Column(name = "NU_VALOR")
+	private Double valor;
 
 	protected Produto() {
 		super();
 	}
 
-	public Produto(long id, String nome, String descricao, String urlImagem, TipoProduto tipoProduto) {
+	public Produto(Long id, String nome, String descricao, String urlImagem, TipoProduto tipoProduto, Double valor) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.descricao = descricao;
 		this.urlImagem = urlImagem;
 		this.tipoProduto = tipoProduto;
+		this.valor = valor;
 	}
 
 	public Long getId() {
@@ -81,6 +84,14 @@ public class Produto {
 
 	public void setTipoProduto(TipoProduto tipoProduto) {
 		this.tipoProduto = tipoProduto;
+	}
+
+	public Double getValor() {
+		return valor;
+	}
+
+	public void setValor(Double valor) {
+		this.valor = valor;
 	}
 
 }

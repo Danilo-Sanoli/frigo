@@ -6,14 +6,38 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content class="list-avatar-page">
   <ion-list>
-    <ion-item *ngFor="let produto of produtos" (click)="selecionaProduto(produto)">
-      <ion-avatar item-start>
-        <img src="https://i.ytimg.com/vi/UTMbWniUKIc/maxresdefault.jpg">
-      </ion-avatar>
-      <h2>{{produto.nome}}</h2>
-      <p>R$ {{produto.valor}}</p>
-    </ion-item>
+    <ion-list-header>Clientes</ion-list-header>
+    <button ion-item (click)="selecionaCliente(1)">
+      Açougue 1
+    </button>
+    <button ion-item (click)="selecionaCliente(2)">
+      Açougue 2
+    </button>
+    <button ion-item (click)="selecionaCliente(3)">
+      Açougue 3
+    </button>
+    <button ion-item (click)="selecionaCliente(4)">
+      Açougue 4
+    </button>
+    <button ion-item (click)="selecionaCliente(5)">
+      Açougue 5
+    </button>
+    <button ion-item (click)="selecionaCliente(6)">
+      Açougue 6
+    </button>
+    <button ion-item (click)="selecionaCliente(7)">
+      Açougue 7
+    </button>
+    <button ion-item (click)="selecionaCliente(8)">
+      Açougue 8
+    </button>
+    <button ion-item (click)="selecionaCliente(9)">
+      Açougue 9
+    </button>
+    <button ion-item (click)="selecionaCliente(10)">
+      Açougue 10
+    </button>
   </ion-list>
 </ion-content>
