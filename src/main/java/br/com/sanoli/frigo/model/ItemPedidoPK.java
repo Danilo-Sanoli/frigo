@@ -11,33 +11,33 @@ public class ItemPedidoPK implements Serializable{
 	private static final long serialVersionUID = -3116510137176921522L;
 	
 	@Column(name="CD_PEDIDO")
-	private int pedido;
+	private Long pedido;
 	@Column(name="CD_PRODUTO")
-	private int produto;
+	private Long produto;
 	
 	public ItemPedidoPK() {
 		super();
 	}
 
-	public ItemPedidoPK(int pedido, int produto) {
+	public ItemPedidoPK(Long pedido, Long produto) {
 		super();
 		this.pedido = pedido;
 		this.produto = produto;
 	}
 
-	public int getPedido() {
+	public Long getPedido() {
 		return pedido;
 	}
 
-	public void setPedido(int pedido) {
+	public void setPedido(Long pedido) {
 		this.pedido = pedido;
 	}
 
-	public int getProduto() {
+	public Long getProduto() {
 		return produto;
 	}
 
-	public void setProduto(int produto) {
+	public void setProduto(Long produto) {
 		this.produto = produto;
 	}
 	

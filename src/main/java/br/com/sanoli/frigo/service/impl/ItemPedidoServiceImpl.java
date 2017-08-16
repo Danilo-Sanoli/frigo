@@ -33,4 +33,9 @@ public class ItemPedidoServiceImpl implements ItemPedidoService {
 		repository.save(pedido);
 	}
 
+	@Override
+	public List<ItemPedido> findByIdPedido(Long id) {
+		return repository.findByPedido(id);
+	}
+
 }

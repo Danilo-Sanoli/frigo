@@ -13,5 +13,6 @@ public interface ItemPedidoService {
 	public List<ItemPedido> findAll();
 	public ItemPedido findOne(ItemPedidoPK id);
 	public void save(ItemPedido pedido);
+	public List<ItemPedido> findByIdPedido(Long id);
 	
 }
