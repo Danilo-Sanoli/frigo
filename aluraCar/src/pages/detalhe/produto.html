@@ -3,38 +3,37 @@
     <ion-title>
       {{produto.nome}}
     </ion-title>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
   </ion-navbar>
 </ion-header>
 
-<ion-content class="card-background-page">
 
-    <ion-card>
+<ion-content>
 
-      <img src="{{produto.urlImagem}}" />
-            
-      <div class="card-title">
-          {{produto.nome}}
-      </div>
-    </ion-card>
-          
-      <ion-item>
-        <ion-icon ios="ios-list-outline" md="md-list">
-          {{produto.descricao}}
-        </ion-icon>
-      </ion-item>
-
-      <ion-item>
-        <ion-icon ios="ios-cash-outline" md="md-cash">
-          {{produto.valor}}
-        </ion-icon>
-      </ion-item>
-      
-      <ion-list>
-        <ion-item>
-          <ion-label floating>Descrição</ion-label>
-          <ion-input type="text" [(ngModel)]="descricao"></ion-input>
-        </ion-item>
-      </ion-list>
-
-     <button ion-button block (click)="addCarrinho()" >Adicionar ao Carrinho</button>
+  <ion-card>
+    <img src="{{produto.urlImagem}}" />
+    <ion-card-content>
+      <ion-card-title>
+        {{produto.nome}}
+      </ion-card-title>
+      <p>
+        {{produto.descricao}}
+      </p>
+    </ion-card-content>
+    <ion-item>
+      <span item-left>{{produto.valor}}</span>
+      <span item-left>(Kg)</span>
+    </ion-item>
+    <ion-item>
+      <ion-input type="number" placeholder="Quantidade (Kg)"></ion-input>
+    </ion-item>
+  </ion-card>
+  
+  <button ion-button block icon-right color="light" (click)="addCarrinho()">
+    <ion-icon name="cart"></ion-icon>
+    Incluir no pedido
+  </button>
+     <!--<button ion-button block (click)="addCarrinho()" >Adicionar ao Carrinho</button>-->
 </ion-content>

@@ -20,11 +20,10 @@ export class HomePage implements OnInit {
     }
 
     selecionaCliente(cliente){
-      this.navCtrl.push(ItemPage, {clienteSelecionado: cliente});
-      // this._http.post('http://localhost:8080/pedido/salvar/1', null)
-      // .subscribe(() => {
-
-      // });
+      this._http.post('http://localhost:8080/pedido/salvar/' + cliente, null)
+      .subscribe(() => {
+        this.navCtrl.push(ItemPage, {clienteSelecionado: cliente});
+      });
     }
 
 }

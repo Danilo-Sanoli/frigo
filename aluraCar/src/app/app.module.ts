@@ -1,5 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ProdutoDetalhadoPage } from '../pages/detalhe/produto';
@@ -8,6 +9,12 @@ import { CarrinhoPage } from '../pages/carrinho/carrinho';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
+
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': '322469c4'
+  }
+};
 
 @NgModule({
   declarations: [
@@ -18,7 +25,8 @@ import 'rxjs/add/operator/toPromise';
     CarrinhoPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    CloudModule.forRoot(cloudSettings)
   ],
   bootstrap: [IonicApp],
   entryComponents: [

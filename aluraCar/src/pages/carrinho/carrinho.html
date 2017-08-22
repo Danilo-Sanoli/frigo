@@ -11,9 +11,12 @@
     <ion-list-header>Produtos</ion-list-header>
     <ion-item *ngFor="let item of items" (click)="excluir(produto)">
       <ion-avatar item-left>
-        <img src="https://i.ytimg.com/vi/UTMbWniUKIc/maxresdefault.jpg"/>
+        <img src="{{item.produto.urlImagem}}"/>
       </ion-avatar>
       <h2>{{item.produto.nome}}</h2>
     </ion-item>
   </ion-list>
+  <button ion-button block color="light">
+    Finalizar pedido
+  </button>
 </ion-content>
