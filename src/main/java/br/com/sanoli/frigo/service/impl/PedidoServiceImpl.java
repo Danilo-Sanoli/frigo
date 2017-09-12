@@ -37,6 +37,18 @@ public class PedidoServiceImpl implements PedidoService{
 		pedido.setStatus(StatusPedido.EM_ANDAMENTO);
 		return repository.save(pedido);
 	}
+
+	@Override
+	public void alteraStatusPedido(Long idPedido, Long idStatus) {
+		Pedido pedido = this.findOne(idPedido);
+		if(idStatus == 1L){
+			pedido.setStatus(StatusPedido.FINALIZADO);
+		}else{
+			pedido.setStatus(StatusPedido.CANCELADO);
+		}
+		repository.save(pedido);
+		
+	}
 	
 	
 

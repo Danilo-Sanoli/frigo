@@ -12,5 +12,6 @@ public interface PedidoService {
 	public List<Pedido> findAll();
 	public Pedido findOne(Long id);
 	public Pedido save(Long idCliente);
+	public void alteraStatusPedido(Long idPedido, Long idStatus);
 
 }
